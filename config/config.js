@@ -1,12 +1,18 @@
 export default{
-    singular: true, // pages or page
     routes: [{
         path: '/',
-        component: './HelloWorld'
+        component: '../layout',
+        routes: [{
+            path: '/',
+            component: './App'
+        },{
+          path: '/app',
+          component: './App'
+        }]
     }],
     plugins: [
         ['umi-plugin-react', {
-
+            antd: true
         }]
     ]
 };
